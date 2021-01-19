@@ -16,7 +16,7 @@ for (let i = 1; i < numeri.length; i++) {
       </ul>
       `;
   } else {
-    document.getElementById('testo-rosso').innerHTML =
+    document.getElementById('testo-verde').innerHTML =
       `
       <ul>
         <li class="${verde}">
