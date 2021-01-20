@@ -25,8 +25,18 @@ const biciclette = [
   }
 ];
 
-// utilizziamo il metodo destructuring, cioè prendere alcune proprietà dell'oggetto e inserirle in una variabile.
+// Utilizziamo il metodo destructuring, cioè prendere alcune proprietà dell'oggetto e inserirle in una variabile.
 
-  const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
+  // const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
+  //
+  // console.log(biciDue.nome + ' '+ biciDue.peso);
 
-  console.log(biciDue.nome + ' '+ biciDue.peso);
+// Template literal
+let name = biciclette[1].nome;
+let peso = biciclette[1].peso;
+
+console.log(
+`
+ ${name} ${peso}
+`
+);
