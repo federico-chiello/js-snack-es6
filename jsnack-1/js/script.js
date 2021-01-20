@@ -25,18 +25,29 @@ const biciclette = [
   }
 ];
 
+const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
+
+let pesoBicicletta = biciclette[0];
+
+for (let i = 0; i < biciclette.length; i++) {
+ if (biciclette[i].peso < pesoBicicletta.peso) {
+   pesoBicicletta = biciclette[i];
+ }
+}
+console.log(pesoBicicletta.nome + ' ' + pesoBicicletta.peso);
+
 // Utilizziamo il metodo destructuring, cioè prendere alcune proprietà dell'oggetto e inserirle in una variabile.
 
-  // const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
-  //
-  // console.log(biciDue.nome + ' '+ biciDue.peso);
+// const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
+//
+// console.log(biciDue.nome + ' '+ biciDue.peso);
 
 // Template literal
-let name = biciclette[1].nome;
-let peso = biciclette[1].peso;
-
-console.log(
-`
- ${name} ${peso}
-`
-);
+// let name = biciclette[1].nome;
+// let peso = biciclette[1].peso;
+//
+// console.log(
+// `
+//  ${name} ${peso}
+// `
+// );
