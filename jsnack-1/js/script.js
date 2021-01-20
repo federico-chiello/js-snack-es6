@@ -25,29 +25,32 @@ const biciclette = [
   }
 ];
 
-const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
-
-let pesoBicicletta = biciclette[0];
-
-for (let i = 0; i < biciclette.length; i++) {
- if (biciclette[i].peso < pesoBicicletta.peso) {
-   pesoBicicletta = biciclette[i];
- }
-}
-console.log(pesoBicicletta.nome + ' ' + pesoBicicletta.peso);
-
 // Utilizziamo il metodo destructuring, cioè prendere alcune proprietà dell'oggetto e inserirle in una variabile.
 
-// const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
-//
-// console.log(biciDue.nome + ' '+ biciDue.peso);
+const [biciUno, biciDue, biciTre, biciQuattro, biciCinque] = biciclette;
+// console.log(biciDue);
 
-// Template literal
-// let name = biciclette[1].nome;
-// let peso = biciclette[1].peso;
-//
-// console.log(
-// `
-//  ${name} ${peso}
-// `
-// );
+// Dichiariamo una variabile del peso minore
+let pesoMinore = biciclette[0].peso;
+
+// Utilizziamo il for each per controllare il peso di ogni bicicletta.
+// metodo 1: con la arrow function
+biciclette.forEach((element) => {
+  const {nome, peso} = element;
+  if (peso < pesoMinore) {
+    pesoMinore = peso;
+  }
+});
+
+// metodo 2: con function semplice
+// biciclette.forEach(function (element){
+//   const {nome, peso} = element;
+//   if (peso < pesoMinore) {
+//     pesoMinore = peso;
+//   }
+// });
+
+// Usiamo il template literal per stampare la bici con il peso minore.
+console.log(`
+  La bicicletta ${biciDue.nome} ha il peso più basso che ammonta a ${pesoMinore}
+`);
